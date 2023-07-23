@@ -16,7 +16,8 @@ jobs:
       # && sudo apt dist-upgrade -y
     
     - name: Install libs
-      run: sudo apt install -y git && sudo apt install -y make && sudo apt install -y python3 && sudo apt install -y gcc-arm-none-eabi
+      run: sudo apt install -y gcc-arm-none-eabi
+      # git && sudo apt install -y make && sudo apt install -y python3 && sudo apt install -y gcc-arm-none-eabi
   
     - name: Clone Blackmagic
       run: cd / && sudo git clone https://github.com/blackmagic-debug/blackmagic.git
