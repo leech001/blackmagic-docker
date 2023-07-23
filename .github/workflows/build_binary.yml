@@ -1,0 +1,32 @@
+name: Release binary builder
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Update Ubuntu
+      run: apt update && apt dist-upgrade -y
+    
+    - name: Install libs
+      run: apt install -y git && apt install -y make && apt install -y python3 && apt install -y gcc-arm-none-eabi
+  
+    - name: Clone Blackmagic
+      run: git clone https://github.com/blackmagic-debug/blackmagic.git
+    
+    - name: Run build target
+      run: cd /blackmagic && make PROBE_HOST=blackpill-f401cc
+     
+    - name: Build release
+      uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        prerelease: false
+        files: |
+          blackmagic/src/blackmagic.bin
