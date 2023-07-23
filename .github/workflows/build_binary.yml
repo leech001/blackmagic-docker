@@ -18,7 +18,7 @@ jobs:
       run: sudo apt install -y git && sudo apt install -y make && sudo apt install -y python3 && sudo apt install -y gcc-arm-none-eabi
   
     - name: Clone Blackmagic
-      run: git clone https://github.com/blackmagic-debug/blackmagic.git
+      run: cd / && git clone https://github.com/blackmagic-debug/blackmagic.git
     
     - name: Run build target
       run: cd /blackmagic && make PROBE_HOST=blackpill-f401cc
