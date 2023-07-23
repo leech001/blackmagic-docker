@@ -1,7 +1,7 @@
-FROM ubuntu:latest AS builder
+FROM ubuntu:latest
 
-# Update Ubuntu and clean
-RUN apt update && apt-get dist-upgrade -y && apt-get autoremove -y && apt-get autoremove -y
+# Update Ubuntu
+RUN apt update && apt dist-upgrade -y
 
 # Install libs
 RUN apt install -y git && apt install -y make && apt install -y python3 && apt install -y gcc-arm-none-eabi
