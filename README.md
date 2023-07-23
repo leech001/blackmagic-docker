@@ -4,7 +4,7 @@ Black Magic Probe project https://github.com/blackmagic-debug/blackmagic
 
 ## Build
 1. Clone this repo
-2. Run build.ps1 on you WIN machine
+2. Run build.ps1 on you WINDOWS machine or build.sh on LINUX machine
 3. Get blackmagic.bin on project directory
 
 ## Target paltform
