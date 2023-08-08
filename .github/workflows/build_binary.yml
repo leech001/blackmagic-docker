@@ -30,5 +30,4 @@ jobs:
         prerelease: false
         automatic_release_tag: "latest"
         files: |
-          ${{runner.workspace}}/blackmagic/src/blackmagic.hex
-          ${{runner.workspace}}/blackmagic/src/blackmagic.bin
+          ./blackmagic/src/blackmagic.bin
