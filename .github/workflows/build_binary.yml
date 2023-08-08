@@ -28,5 +28,7 @@ jobs:
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         prerelease: false
+        automatic_release_tag: "latest"
         files: |
-          ./blackmagic/src/blackmagic.bin
+          ${{runner.workspace}}/blackmagic/src/blackmagic.hex
+          ${{runner.workspace}}/blackmagic/src/blackmagic.bin
