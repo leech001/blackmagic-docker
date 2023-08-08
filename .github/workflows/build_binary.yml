@@ -30,4 +30,4 @@ jobs:
         prerelease: false
         files: |
           ./blackmagic/src/blackmagic.bin
-          ./blackmagic/src/blackmagic.hex
+          ./blackmagic/src/blackmagic.elf
